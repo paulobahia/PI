@@ -9,27 +9,34 @@ const Navbar = () => {
       <img src={logo} alt="hellopsi" className="w-[40px] h-[40px]" />
       <ul className="list-none sm:flex hidden justify-start items-center flex-1">
         <li
-          className={`font-poppins  font-normal cursor-pointer text-[16px] text-white ml-10`}
+          className={`font-poppins  font-normal  text-[16px] text-white ml-10`}
         >
           <div className="gap-x-3 flex">
-            <a href="" className="hover:bg-purple-500 rounded py-1 px-2">
+            <a
+              href=""
+              className="hover:bg-purple-500 cursor-pointer rounded py-1 px-2"
+            >
               Especialistas
             </a>
-            <a href="" className="hover:bg-purple-500 rounded py-1 px-2">
+            <a
+              href=""
+              className="hover:bg-purple-500 cursor-pointer rounded py-1 px-2"
+            >
               Empresa
             </a>
-            <a href="" className="hover:bg-purple-500 rounded py-1 px-2">
+            <a
+              href=""
+              className="hover:bg-purple-500 cursor-pointer rounded py-1 px-2"
+            >
               Blog
             </a>
           </div>
         </li>
       </ul>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        <li
-          className={`font-poppins font-normal cursor-pointer text-[16px] text-white`}
-        >
+        <li className={`font-poppins font-normal  text-[16px] text-white`}>
           <div className="gap-x-5 flex items-center">
-            <li className="md:flex hidden hover:bg-purple-500  rounded py-1 px-2 ">
+            <li className="md:flex hidden hover:bg-purple-500 cursor-pointer rounded py-1 px-2 ">
               Nossos Especialistas
             </li>
             <button
@@ -60,13 +67,11 @@ const Navbar = () => {
           } p-6 bg-gradient-to-r from-purple-500 to-indigo-400 absolute top-20 right-0 mx-0 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex flex-col justify-ends items-center flex-1">
-            <li
-              className={`font-poppins font-normal cursor-pointer text-[16px] text-white`}
-            >
-              <li>Especialistas</li>
-              <li>Empresa</li>
-              <li>Blog</li>
-              <li>Nossos Especialistas</li>
+            <div className={`font-poppins font-normal text-[16px] text-white`}>
+              <li className="cursor-pointer">Especialistas</li>
+              <li className="cursor-pointer">Empresa</li>
+              <li className="cursor-pointer">Blog</li>
+              <li className="cursor-pointer">Nossos Especialistas</li>
               <div className="mt-5 flex gap-5">
                 <button
                   type="button"
@@ -81,7 +86,7 @@ const Navbar = () => {
                   Cadastro
                 </button>
               </div>
-            </li>
+            </div>
           </ul>
         </div>
       </div>
