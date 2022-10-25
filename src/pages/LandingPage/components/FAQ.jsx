@@ -17,19 +17,20 @@ const FAQ = () => {
           </h1>
         </div>
         <p
-          className={`${styles.paragraph} text-purple-500 font-semibold max-w-[480px]`}
+          className={`${styles.paragraph} text-purple-500 font-semibold text-center sm:text-start max-w-[480px]`}
         >
-          Confira as perguntas mais frequentes <br /> sobre a Hello Psi
+          Confira as perguntas mais frequentes{" "}
+          <br className="sm:block hidden" /> sobre a Hello Psi
         </p>
-        <div className="flex flex-center items-center w-full gap-5 mt-4">
+        <div className="flex flex-center md:justify-start justify-center items-center w-full sm:gap-5 xs:gap-2 gap-4 mt-4">
           {showFAQ === "HelloPSI" ? (
-            <button className="bg-purple-500 text-white font-semibold py-2 px-5  text-[14px] rounded">
+            <button className="bg-purple-500 text-white font-semibold py-2 px-5 text-[14px] rounded">
               Hello Psi
             </button>
           ) : (
             <button
               onClick={() => setShowFAQ("HelloPSI")}
-              className="bg-transparent text-purple-600 font-semibold py-2 px-5 border text-[14px] border-purple-600 rounded"
+              className="bg-transparent text-purple-600 font-semibold xs:block hidden py-2 px-5 border text-[14px] border-purple-600 rounded"
             >
               Hello Psi
             </button>
