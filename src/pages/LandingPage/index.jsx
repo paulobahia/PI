@@ -13,7 +13,7 @@ import {
 export const LadingPage = () => {
   return (
     <div className="bg-purple-600 w-full overflow-hidden">
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.paddingX} sticky ${styles.flexCenter}`}>
           <Navbar />
       </div>
       <div className={`bg-slate-100 ${styles.flexStart}`}>
