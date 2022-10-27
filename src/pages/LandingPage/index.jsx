@@ -26,9 +26,9 @@ export const LadingPage = () => {
           <Guide />
           <Advantage />
           <Feedback />
-          <Feed />
           <Shortcut />
           <FAQ />
+          <Feed />
         </div>
       </div>
     </div>

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import styles from "../../../style";
 
 const Feed = () => {
-  return (
-    <div>Feed</div>
-  )
-}
+  return <div className={`${styles.paddingY}  flex-col relative `}>Feed</div>;
+};
 
-export default Feed
+export default Feed;
