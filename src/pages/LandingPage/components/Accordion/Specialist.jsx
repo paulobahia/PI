@@ -16,11 +16,11 @@ const Specialist = () => {
           key={specialistFAQ.id}
           open={openFaqId === specialistFAQ.id}
           onClick={clickActiveFAQ(specialistFAQ.id)}
-          class="bg-white shadow rounded group mb-0.5"
+          className="bg-white shadow rounded group mb-0.5"
         >
           <summary
-            class="list-none flex flex-wrap items-center cursor-pointer
-    focus-visible:outline-none focus-visible:ring
+            class="list-nones flex flex-wrap items-center cursor-pointer
+    focus-visible:outline-none focus-visible:ring 
     rounded group-open:rounded-b-none group-open:z-[1] relative
     "
           >
