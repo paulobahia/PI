@@ -8,13 +8,14 @@ import {
   FAQ,
   Navbar,
   Header,
+  Contact,
 } from "./components";
 
 export const LadingPage = () => {
   return (
     <div className="bg-purple-600 w-full overflow-hidden">
       <div className={`${styles.paddingX} sticky ${styles.flexCenter}`}>
-          <Navbar />
+        <Navbar />
       </div>
       <div className={`bg-slate-100 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
@@ -29,6 +30,7 @@ export const LadingPage = () => {
           <Shortcut />
           <FAQ />
           <Feed />
+          <Contact />
         </div>
       </div>
     </div>

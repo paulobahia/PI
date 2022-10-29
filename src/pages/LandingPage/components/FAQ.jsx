@@ -6,7 +6,7 @@ import Specialist from "./Accordion/Specialist";
 import { searchFAQ } from "../../../../assets";
 
 const FAQ = () => {
-  const [showFAQ, setShowFAQ] = useState("Patient");
+  const [showFAQ, setShowFAQ] = useState("HelloPSI");
   return (
     <section className={`${styles.paddingY}  flex-col relative `}>
       <div
@@ -23,6 +23,18 @@ const FAQ = () => {
           Confira as perguntas mais frequentes sobre a Hello Psi
         </p>
         <div className="flex flex-center md:justify-start justify-center items-center w-full sm:gap-5 xs:gap-2 gap-4 mt-4">
+          {showFAQ === "HelloPSI" ? (
+            <button className="bg-purple-500 text-white font-semibold py-2 px-5 text-[14px] rounded">
+              Hello Psi
+            </button>
+          ) : (
+            <button
+              onClick={() => setShowFAQ("HelloPSI")}
+              className="bg-transparent text-purple-600 font-semibold xs:block hidden py-2 px-5 border text-[14px] border-purple-600 rounded"
+            >
+              Hello Psi
+            </button>
+          )}
           {showFAQ === "Patient" ? (
             <button className="bg-purple-500 text-white font-semibold py-2 px-5  text-[14px] rounded">
               Paciente
@@ -47,18 +59,7 @@ const FAQ = () => {
               Especialista
             </button>
           )}
-          {showFAQ === "HelloPSI" ? (
-            <button className="bg-purple-500 text-white font-semibold py-2 px-5 text-[14px] rounded">
-              Hello Psi
-            </button>
-          ) : (
-            <button
-              onClick={() => setShowFAQ("HelloPSI")}
-              className="bg-transparent text-purple-600 font-semibold xs:block hidden py-2 px-5 border text-[14px] border-purple-600 rounded"
-            >
-              Hello Psi
-            </button>
-          )}
+
         </div>
         <div className={`md:flex w-full`}>
           {showFAQ === "HelloPSI" ? <HelloPsi /> : null}

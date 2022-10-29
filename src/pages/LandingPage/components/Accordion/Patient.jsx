@@ -16,15 +16,14 @@ const Patient = () => {
           key={patientFAQ.id}
           open={openFaqId === patientFAQ.id}
           onClick={clickActiveFAQ(patientFAQ.id)}
-          class="bg-white shadow rounded group mb-0.5"
-        >
+          class=" bg-white p-4 rounded-xl shadow group mx-auto mb-0.5 max-h-[56px] open:!max-h-[400px] transition-[max-height] duration-1000 overflow-hidden">
           <summary
             class="list-none flex flex-wrap items-center cursor-pointer
-  focus-visible:outline-none focus-visible:ring
-  rounded group-open:rounded-b-none group-open:z-[1] relative
-  "
+        focus-visible:outline-none focus-visible:ring
+        rounded group-open:rounded-b-none group-open:z-[1] relative
+        "
           >
-            <h3 class="flex flex-1 p-4 font-semibold">{patientFAQ.title}</h3>
+            <h3 class="flex flex-1 font-semibold">{patientFAQ.title}</h3>
             <div class="flex w-10 items-center justify-center">
               <div
                 class="border-8 border-transparent border-l-gray-600 ml-2
@@ -33,7 +32,10 @@ const Patient = () => {
               ></div>
             </div>
           </summary>
-          <div class="p-4">
+
+          <hr class="my-2 scale-x-150" />
+
+          <div class="text-sm -m-4 -mt-2 p-4 bg-gray-50">
             <p>{patientFAQ.body}</p>
           </div>
         </details>
