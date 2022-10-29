@@ -8,7 +8,6 @@ import {
   FAQ,
   Navbar,
   Header,
-  Contact,
 } from "./components";
 
 export const LadingPage = () => {
@@ -30,7 +29,6 @@ export const LadingPage = () => {
           <Shortcut />
           <FAQ />
           <Feed />
-          <Contact />
         </div>
       </div>
     </div>
