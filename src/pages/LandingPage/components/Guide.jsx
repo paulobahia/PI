@@ -73,7 +73,7 @@ const Guide = () => {
         <div
           className={`flex w-full justify-between ${styles.paddingY}`}
         >
-          <img src={guide3} alt="" />
+          <img src={guide2} alt="" />
           <div className="items-center flex md:text-start text-center">
             <h2
               className={`font-poppins font-bold text-[30px] text-black`}
@@ -138,7 +138,7 @@ const Guide = () => {
               </ul>
             </h2>
           </div>
-          <img src={guide2} alt="" />
+          <img src={guide3} alt="" />
           {/* <img src={guide1} alt="guia" className="absolute lg:flex hidden  xl:-right-0 -right-28 scale-75 xl:scale-100  xl:-bottom-[23%] -bottom-64" /> */}
         </div>
       </div>
