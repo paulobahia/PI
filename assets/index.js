@@ -12,8 +12,14 @@ import people01 from "./people01.png";
 import people02 from "./people02.png";
 import people03 from "./people03.png";
 import searchFAQ from "./searchFAQ.jpg";
+import guide1 from "./guide1.png";
+import guide2 from "./guide2.png";
+import guide3 from "./guide3.png";
 
 export {
+  guide1,
+  guide2,
+  guide3,
   quotes,
   searchFAQ,
   people01,
