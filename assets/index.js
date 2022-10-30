@@ -15,11 +15,19 @@ import searchFAQ from "./searchFAQ.jpg";
 import guide1 from "./guide1.png";
 import guide2 from "./guide2.png";
 import guide3 from "./guide3.png";
+import contact from "./contact.svg";
+import company from "./company.png";
+import local from "./local.png";
+import call from "./call.png";
 
 export {
+  company,
+  call,
+  local,
   guide1,
   guide2,
   guide3,
+  contact,
   quotes,
   searchFAQ,
   people01,

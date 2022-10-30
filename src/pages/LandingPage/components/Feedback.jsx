@@ -28,6 +28,7 @@ export const feedback = [
     title: "Terapeuta",
     img: people03,
   },
+  
 ];
 
 const Feedback = () => {

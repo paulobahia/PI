@@ -64,8 +64,7 @@ const Guide = () => {
               </ul>
             </h2>
           </div>
-          <img src={guide1} alt="" />
-          {/* <img src={guide1} alt="guia" className="absolute lg:flex hidden  xl:-right-0 -right-28 scale-75 xl:scale-100  xl:-bottom-[23%] -bottom-64" /> */}
+          <img src={guide1} alt="" className="md:flex hidden" />
         </div>
         <div className="w-3/5 md:flex hidden">
           <img src={guideLR} alt="" />
@@ -73,7 +72,7 @@ const Guide = () => {
         <div
           className={`flex w-full justify-between ${styles.paddingY}`}
         >
-          <img src={guide2} alt="" />
+          <img src={guide2} alt="" className="md:flex hidden" />
           <div className="items-center flex md:text-start text-center">
             <h2
               className={`font-poppins font-bold text-[30px] text-black`}
@@ -138,8 +137,7 @@ const Guide = () => {
               </ul>
             </h2>
           </div>
-          <img src={guide3} alt="" />
-          {/* <img src={guide1} alt="guia" className="absolute lg:flex hidden  xl:-right-0 -right-28 scale-75 xl:scale-100  xl:-bottom-[23%] -bottom-64" /> */}
+          <img src={guide3} alt="" className="md:flex hidden" />
         </div>
       </div>
     </section>

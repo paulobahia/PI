@@ -6,7 +6,7 @@ import Specialist from "./Accordion/Specialist";
 import { searchFAQ } from "../../../../assets";
 
 const FAQ = () => {
-  const [showFAQ, setShowFAQ] = useState("HelloPSI");
+  const [showFAQ, setShowFAQ] = useState("Patient");
   return (
     <section className={`${styles.paddingY}  flex-col relative `}>
       <div
@@ -22,7 +22,7 @@ const FAQ = () => {
         >
           Confira as perguntas mais frequentes sobre a Hello Psi
         </p>
-        <div className="flex flex-center md:justify-start justify-center items-center w-full sm:gap-5 xs:gap-2 gap-4 mt-4">
+        <div className="flex flex-center scroll-auto md:justify-start justify-center items-center w-full sm:gap-5 xs:gap-2 gap-4 mt-4">
           {showFAQ === "HelloPSI" ? (
             <button className="bg-purple-500 text-white font-semibold py-2 px-5 text-[14px] rounded">
               Hello Psi
