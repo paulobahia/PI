@@ -4,7 +4,7 @@ import { company, local, call } from '../../../../assets'
 const Contact = () => {
 
   return <div className={`${styles.paddingY}  text-center `}>
-    <h2 className="mb-4 text-4xl font-extrabold text-center text-white ">Fale conosco</h2>
+    <h2 id="Contact" className="mb-4 text-4xl font-extrabold text-center text-white ">Fale conosco</h2>
     <p className="mb-8 lg:mb-14 font-light text-center text-white dark:text-gray-400 sm:text-xl">
       Tem um problema técnico?
       Quer enviar comentários um Feedback? <br />

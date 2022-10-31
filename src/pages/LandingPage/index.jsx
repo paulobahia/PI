@@ -22,10 +22,18 @@ export const LadingPage = () => {
           <Header />
         </div>
       </div>
-      <div className={`bg-white ${styles.paddingX} ${styles.flexStart}`}>
+      <div className={`bg-white ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Guide />
+        </div>
+      </div>
+      <div className={`bg-slate-100 ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
           <Advantage />
+        </div>
+      </div>
+      <div className={`bg-white ${styles.paddingX} ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
           <Feedback />
           <Shortcut />
           <FAQ />

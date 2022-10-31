@@ -73,12 +73,14 @@ const FAQ = () => {
             />
             <div className="text-center">
               <p className="font-medium m-4">Ainda tem alguma dúvida?</p>
+              <a href="#Contact">
               <button
                 type="button"
                 className="bg-transparent  hover:bg-purple-600 hover:text-white font-bold py-2 px-5 border text-[14px] border-purple-300 rounded-xl"
-              >
+                >
                 Fale conosco
               </button>
+                </a>
             </div>
           </div>
         </div>
