@@ -19,9 +19,27 @@ import contact from "./contact.svg";
 import company from "./company.png";
 import local from "./local.png";
 import call from "./call.png";
+import agenda from './agenda.png'
+import blog from './blog.png'
+import security from './security.png'
+import specialist from './specialist.png'
+import profile from './profile.png'
+import ambiente from './ambiente.png'
+
+
+
+
+
+
 
 export {
   company,
+  ambiente,
+  agenda,
+  profile,
+  blog,
+  security,
+  specialist,
   call,
   local,
   guide1,

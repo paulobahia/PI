@@ -17,7 +17,7 @@ export const LadingPage = () => {
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <Navbar />
       </div>
-      <div className={`bg-slate-100 ${styles.flexStart}`}>
+      <div className={`bg-slate-50 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Header />
         </div>
@@ -27,7 +27,7 @@ export const LadingPage = () => {
           <Guide />
         </div>
       </div>
-      <div className={`bg-slate-100 ${styles.flexStart}`}>
+      <div className={`bg-purple-100 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Advantage />
         </div>
@@ -40,7 +40,7 @@ export const LadingPage = () => {
           <Feed />
         </div>
       </div>
-      <div className={`${styles.flexCenter} bg-purple-500 ${styles.paddingX} `}>
+      <div className={`${styles.flexCenter} bg-gradient-to-br from-purple-600 to-purple-300 ${styles.paddingX} `}>
         <div className={`${styles.boxWidth}`}>
           <Contact />
         </div>

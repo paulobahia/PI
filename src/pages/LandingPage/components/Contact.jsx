@@ -27,7 +27,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                  className="shadow-sm bg-gray-50 border border-gray-500 text-white text-sm rounded-lg focus:ring-primary-500  focus:border-primary-500 block w-full p-2.5"
                   placeholder="Kleber"
                   required
                 />
@@ -41,7 +41,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="email"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                  className="shadow-sm bg-gray-50 border border-gray-500 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                   placeholder="Rodrigues"
                   required
                 />
@@ -57,7 +57,7 @@ const Contact = () => {
                 </label>
                 <input
                   type="text"
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                  className="shadow-sm bg-gray-50 border border-gray-500 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                   placeholder="kleber.R@gmail.com"
                   required
                 />
@@ -71,7 +71,7 @@ const Contact = () => {
                 </label>
                 <input
                   type=""
-                  className="shadow-sm bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                  className="shadow-sm bg-gray-50 border border-gray-500 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                   placeholder="(00) 00000-0000"
                   required
                 />
@@ -87,7 +87,7 @@ const Contact = () => {
               <textarea
                 id="message"
                 rows="6"
-                className="block p-2.5 w-full text-sm text-white bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+                className="block p-2.5 w-full text-sm text-white bg-gray-50 rounded-lg shadow-sm border border-gray-500 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Escreva sua mensagem aqui..."
               ></textarea>
             </div>
@@ -141,7 +141,7 @@ const Contact = () => {
             Ligue-nos para falar com um membro da nossa equipa.
             <br /> Nós estamos sempre felizes em ajudar
           </p>
-          <p className="font-bold text-black mt-3">+55 (31) 3247-3030</p>
+          <p className="font-extrabold text-black mt-3">+55 (31) 3247-3030</p>
         </div>
       </div>
     </div>
