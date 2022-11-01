@@ -16,7 +16,7 @@ const HelloPsi = () => {
           key={helloFAQ.id}
           open={openFaqId === helloFAQ.id}
           onClick={clickActiveFAQ(helloFAQ.id)}
-          className=" bg-white p-4 rounded-xl shadow group mx-auto mb-0.5 max-h-[56px] open:!max-h-[400px] transition-[max-height] duration-1000 overflow-hidden">
+          className=" bg-white p-4 rounded-xl shadow group mx-auto mb-0.5 xs:max-h-[100px] max-h-[200px] open:!max-h-[400px] transition-[max-height] duration-1000 overflow-hidden">
           <summary
             className="list-none flex flex-wrap items-center cursor-pointer
         focus-visible:outline-none focus-visible:ring

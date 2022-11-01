@@ -14,7 +14,7 @@ const Contact = () => {
         Tem um problema técnico? Quer enviar comentários um Feedback? <br />
         Esta com duvidas sobre alguma funcionalidade do sistema ? Nos informe!
       </p>
-      <div className="py-8 lg:py-10 px-4 mx-auto md:flex grid justify-between w-full">
+      <div className="py-8 lg:py-10 px-4 mx-auto md:flex flex-1 justify-between w-full">
         <div className="w-full">
           <form action="#" className="space-y-3  w-full">
             <div className="flex w-full space-x-5 justify-between">

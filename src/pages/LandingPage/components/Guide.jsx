@@ -15,7 +15,7 @@ const Guide = () => {
       <div
         className={`flex-1 flex justify-center items-center flex-col xl:px-0 sm:px-10 px-6`}
       >
-        <div className="flex flex-center justify-between items-center w-full">
+        <div className="flex flex-center  items-center w-full">
           <h1 className="flex-1 text-center font-poppins font-semibold ss:text-[45px] text-[35px] text-black">
             Comece a utilizar o<br className="lg:hidden" />{" "}
             <span className="text-gradient">Hello Psi</span>
@@ -29,7 +29,7 @@ const Guide = () => {
           em direção ao seu bem-estar
         </p>
         <div
-          className={`flex w-full justify-between ${styles.paddingY}`}
+          className={`flex w-full md:justify-between justify-center ${styles.paddingY}`}
         >
           <div className="items-center flex md:text-start text-center">
             <h2
@@ -70,7 +70,7 @@ const Guide = () => {
           <img src={guideLR} alt="" />
         </div>
         <div
-          className={`flex w-full justify-between ${styles.paddingY}`}
+          className={`flex w-full md:justify-between justify-center ${styles.paddingY}`}
         >
           <img src={guide2} alt="" className="md:flex hidden" />
           <div className="items-center flex md:text-start text-center">
@@ -107,7 +107,7 @@ const Guide = () => {
           <img src={guideRL} alt="" />
         </div>
         <div
-          className={`flex w-full justify-between ${styles.paddingY}`}
+          className={`flex w-full md:justify-between justify-center ${styles.paddingY}`}
         >
           <div className="items-center flex md:text-start text-center">
             <h2
