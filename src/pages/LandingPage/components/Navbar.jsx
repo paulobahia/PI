@@ -5,8 +5,8 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hellopsi" className="w-[40px] h-[40px]" />
+    <nav className="w-full flex py-4 justify-between items-center navbar">
+      <img src={logo} alt="hellopsi" className="w-[74px] h-[74px]" />
       <ul className="list-none sm:flex hidden justify-start items-center flex-1">
         <li
           className={`font-poppins  font-normal  text-[16px] text-white ml-10`}
@@ -62,9 +62,8 @@ const Navbar = () => {
           onClick={() => setToggle((prev) => !prev)}
         />
         <div
-          className={`${
-            toggle ? "flex" : "hidden"
-          } p-6 bg-gradient-to-r from-purple-500 to-indigo-400 absolute top-20 right-0 mx-0 my-2 min-w-[140px] rounded-xl sidebar`}
+          className={`${toggle ? "flex" : "hidden"
+            } p-6 bg-gradient-to-r from-purple-500 to-indigo-400 absolute top-20 right-0 mx-0 my-2 min-w-[140px] rounded-xl sidebar`}
         >
           <ul className="list-none flex flex-col justify-ends items-center flex-1">
             <div className={`font-poppins font-normal text-[16px] text-white`}>

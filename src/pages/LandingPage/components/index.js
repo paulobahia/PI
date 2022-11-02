@@ -1,6 +1,5 @@
 import Advantage from "./Advantage";
 import FAQ from "./FAQ";
-import Feed from "./Feed";
 import Feedback from "./Feedback";
 import Guide from "./Guide";
 import Shortcut from "./Shortcut";
@@ -13,7 +12,6 @@ export {
   Contact,
   Advantage,
   Feedback,
-  Feed,
   Shortcut,
   Navbar,
   Header,

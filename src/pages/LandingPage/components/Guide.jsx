@@ -1,4 +1,6 @@
 import React from "react";
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import styles from "../../../style";
 import {
   guideLR,
@@ -8,8 +10,15 @@ import {
   guide2,
   guide3
 } from "../../../../assets";
+import { useEffect } from "react";
 
 const Guide = () => {
+
+  useEffect(() => {
+    Aos.init({ duration: 2500 });
+  }, [])
+
+
   return (
     <section className={`flex md:flex-row flex-col  ${styles.paddingY}`}>
       <div
@@ -29,6 +38,7 @@ const Guide = () => {
           em direção ao seu bem-estar
         </p>
         <div
+          data-aos='fade-left'
           className={`flex w-full md:justify-between justify-center ${styles.paddingY}`}
         >
           <div className="items-center flex md:text-start text-center">
@@ -42,23 +52,23 @@ const Guide = () => {
               </p>
               <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-3 grid-flow-col gap-y-2 gap-x-10">
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
               </ul>
@@ -70,6 +80,7 @@ const Guide = () => {
           <img src={guideLR} alt="" />
         </div>
         <div
+          data-aos='fade-left'
           className={`flex w-full md:justify-between justify-center ${styles.paddingY}`}
         >
           <img src={guide2} alt="" className="md:flex hidden" />
@@ -83,19 +94,19 @@ const Guide = () => {
               </p>
               <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-2 grid-flow-col gap-y-2 gap-x-10">
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
               </ul>
@@ -107,6 +118,7 @@ const Guide = () => {
           <img src={guideRL} alt="" />
         </div>
         <div
+          data-aos='fade-left'
           className={`flex w-full md:justify-between justify-center ${styles.paddingY}`}
         >
           <div className="items-center flex md:text-start text-center">
@@ -119,19 +131,19 @@ const Guide = () => {
               </p>
               <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-2 grid-flow-col gap-y-2 gap-x-10">
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
                 <li className="gap-2">
-                  <img src={bar} alt="bar" />
+                  <img data-aos="zoom-in" src={bar} alt="bar" />
                   Loren Ipsum
                 </li>
               </ul>

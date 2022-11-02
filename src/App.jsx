@@ -1,4 +1,3 @@
-import styles from "./style";
 import LadingPage from "./pages/LandingPage";
 
 const App = () => {

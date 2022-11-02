@@ -3,7 +3,6 @@ import {
   Guide,
   Advantage,
   Feedback,
-  Feed,
   Shortcut,
   FAQ,
   Contact,
@@ -22,14 +21,14 @@ export const LadingPage = () => {
           <Header />
         </div>
       </div>
-      <div className={`bg-white ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
-          <Guide />
-        </div>
-      </div>
       <div className={`bg-purple-100 ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
           <Advantage />
+        </div>
+      </div>
+      <div className={`bg-white ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Guide />
         </div>
       </div>
       <div className={`bg-white ${styles.paddingX} ${styles.flexStart}`}>
@@ -37,7 +36,6 @@ export const LadingPage = () => {
           <Feedback />
           <Shortcut />
           <FAQ />
-          <Feed />
         </div>
       </div>
       <div className={`${styles.flexCenter} bg-gradient-to-br from-purple-600 to-purple-300 ${styles.paddingX} `}>

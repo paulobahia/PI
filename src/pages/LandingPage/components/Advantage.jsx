@@ -23,9 +23,11 @@ const Advantage = () => {
           <div className={` ${styles.paddingY} text-[16px] md:text-start text-center font-medium mt-10 grid md:grid-rows-2 grid-rows-6 grid-flow-col gap-y-5 gap-x-20`}>
             <div>
               <div className='mb-4 flex md:justify-start justify-center'>
-                <img src={specialist} alt="Psicologo" className='' />
+                <img src={specialist} alt="Psicologo" className='mb-4' />
               </div>
-              <p className='font-poppins font-bold text-[35px] text-black'>Profissionais qualificados</p>
+              <p className='font-poppins font-bold text-[35px] text-black'>
+                Profissionais qualificados
+              </p>
               <p className={`font-poppins mt-3 font-semibold text-gray-500 text-[15px]`}>Profissionais qualificados e regulamentados no  Conselho. <br /> E selecionados a mão por nossa equipe</p>
             </div>
             <div>
