@@ -8,16 +8,16 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-4 justify-between items-center navbar">
-      <img src={logo} alt="hellopsi" className="w-[50px] h-[50px]" />
+      <img onClick={() => {
+                navigate('/')
+              }} src={logo} alt="hellopsi" className="w-[50px] h-[50px]" />
       <ul className="list-none sm:flex hidden justify-start items-center flex-1">
         <li
           className={`font-poppins  font-normal  text-[16px] text-white ml-10`}
         >
           <div className="gap-x-3 flex">
             <a
-              onClick={() => {
-                navigate('/especialistas')
-              }}
+              
               className="hover:bg-purple-500 cursor-pointer rounded py-1 px-2"
             >
               Especialistas

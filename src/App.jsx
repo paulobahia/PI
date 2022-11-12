@@ -1,7 +1,10 @@
-import LadingPage from "./pages/LandingPage";
+import { AppRoutes } from "./routes/routes";
+
 
 const App = () => {
-  return <LadingPage />;
+  return (
+      <AppRoutes />
+  );
 };
 
 export default App;

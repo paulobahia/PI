@@ -10,9 +10,9 @@ import {
   Header,
 } from "./components";
 
-export const LadingPage = () => {
+export const LandingPage = () => {
   return (
-    <div className="bg-purple-600 w-full overflow-hidden">
+    <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <Navbar />
       </div>
@@ -38,7 +38,7 @@ export const LadingPage = () => {
           <FAQ />
         </div>
       </div>
-      <div className={`${styles.flexCenter} bg-gradient-to-br from-purple-600 to-purple-300 ${styles.paddingX} `}>
+      <div className={`${styles.flexCenter} bg-gradient-to-br from-primary to-purple-300 ${styles.paddingX} `}>
         <div className={`${styles.boxWidth}`}>
           <Contact />
         </div>
@@ -47,4 +47,4 @@ export const LadingPage = () => {
   );
 };
 
-export default LadingPage;
+export default LandingPage;
