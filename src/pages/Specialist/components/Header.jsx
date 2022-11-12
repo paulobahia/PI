@@ -4,7 +4,7 @@ import { people } from "../../../../assets";
 
 const Header = () => (
   <section className={`flex md:flex-row flex-col ${styles.paddingY}`}>
-    Teste
+
   </section>
 );
 
