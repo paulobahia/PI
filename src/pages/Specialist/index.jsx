@@ -2,8 +2,12 @@ import React from 'react'
 import styles from "../../style";
 import {
     Navbar,
-    Header,
+    Header
 } from "./components";
+import FooterV1 from './components/FooterV1';
+
+
+
 
 const Specialist = () => {
     return (
@@ -16,8 +20,11 @@ const Specialist = () => {
                     <Header />
                 </div>
             </div>
-        </div>
+            <div>
+                <FooterV1/>
+            </div>
+        </div >
     )
 }
 
-export default Specialist
+export default Specialist;
