@@ -15,9 +15,6 @@ const Navbar = () => {
         >
           <div className="gap-x-3 flex">
             <a
-              onClick={() => {
-                navigate('/especialistas')
-              }}
               className="hover:bg-purple-500 cursor-pointer rounded py-1 px-2"
             >
               Especialistas
@@ -44,12 +41,14 @@ const Navbar = () => {
               Nossos Especialistas
             </li>
             <button
+              onClick={() => { navigate('/login') }}
               type="button"
               className="bg-transparent  hover:bg-white hover:text-purple-600 font-bold py-2 px-5 border text-[14px] border-white rounded-xl"
             >
               Login
             </button>
             <button
+              onClick={() => { navigate('/signin') }}
               type="button"
               className="py-2 px-5 rounded-xl hover:bg-purple-500 hover:text-white  bg-white font-bold text-[14px] text-purple-700"
             >

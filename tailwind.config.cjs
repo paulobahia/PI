@@ -13,6 +13,7 @@ module.exports = {
         primary: "#8110ee",
         subPrimary: "#8e0fed",
         secondary: "#00f6ff",
+        pastel:"#D9C1FB",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
       },

@@ -9,8 +9,8 @@ import {
   Navbar,
   Header,
 } from "./components";
-
 export const LandingPage = () => {
+
   return (
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
