@@ -5,6 +5,7 @@ import LandingPage from "../pages/LandingPage";
 import Specialist from "../pages/Specialist";
 import Login from "../pages/Login"
 import Signin from "../pages/Signin"
+import Form from "../pages/Form"
 
 export const AppRoutes = () => {
   return (
@@ -21,6 +22,9 @@ export const AppRoutes = () => {
         </Routes>
         <Routes>
           <Route path="/signin" element={<Signin />} />
+        </Routes>
+        <Routes>
+          <Route path="/form" element={<Form />} />
         </Routes>
       </Fragment>
     </BrowserRouter>
