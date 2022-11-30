@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useState } from "react";
+import { createUser } from '../service'
 
 const Form = () => {
   const CEPRef = useRef();
@@ -42,6 +43,21 @@ const Form = () => {
         });
       });
   };
+
+  function createUser() {
+    const postData = {
+
+    }
+    createUser(postData)
+      .then((response) => {
+        console.log("Usuário criado")
+      })
+      .catch((error) => {
+        console.log(error)
+        console.log(error.response)
+      })
+
+  }
 
   function Next() {
     setIsData(true);
