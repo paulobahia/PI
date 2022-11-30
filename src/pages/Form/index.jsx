@@ -1,9 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const { register, setValue, setFocus } = useForm();
   const CEPRef = useRef();
   const [isData, setIsData] = useState(false);
   const [isLocal, setIsLocal] = useState(false);
@@ -322,7 +320,7 @@ const Form = () => {
             {isEnd ? (
               <div>
                 <div className="flex w-full justify-end">
-                  <button>
+                  <button onClick={() => setIsDisable(!isDisable)}>
                     <svg
                       class="w-7 h-7"
                       fill="none"
