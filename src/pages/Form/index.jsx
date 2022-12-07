@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import { createUser } from '../service'
+import { createUser } from "../service";
 
 const Form = () => {
   const CEPRef = useRef();
@@ -49,32 +49,42 @@ const Form = () => {
 
   function createUser() {
     const postData = {
-
-    }
+      fullName: formValues.name,
+      Birthday: formValues.birthday,
+      cpf: formValues.cpf,
+      gender: "Homem",
+      mothersName: formValues.mother,
+      cep: formValues.cep,
+      address: formValues.address,
+      uf: formValues.uf,
+      city: formValues.city,
+      number: formValues.number,
+      addInfo: formValues.complement,
+    };
     createUser(postData)
       .then((response) => {
-        console.log("Usuário criado")
+        console.log("Usuário criado");
       })
       .catch((error) => {
-        console.log(error)
-        console.log(error.response)
-      })
-
+        console.log(error);
+        console.log(error.response);
+      });
   }
 
   function Next() {
     if (formValues.name == "") {
-      setNameError(true)
-    }
-    if (formValues.cpf == "") {
-      setCPFError(true)
-    }
-    if (formValues.birthday == "") {
-      setBirthdayError(true)
-    }
-    else {
+      setNameError(true);
+    } else if (TestaCPF(strCPF) === false) {
+      console.log("CPF Ruim");
+      setCPFError(true);
+    } else if (formValues.birthday == "") {
+      setBirthdayError(true);
+    } else {
       setIsData(true);
       setIsLocal(true);
+      setNameError(false);
+      setCPFError(false);
+      setBirthdayError(false);
     }
   }
 
@@ -87,6 +97,31 @@ const Form = () => {
     setIsData(true);
     setIsLocal(false);
     setIsEnd(true);
+  }
+
+  let strCPF = formValues.cpf;
+  function TestaCPF(strCPF) {
+    var Soma;
+    var Resto;
+    var i;
+    Soma = 0;
+    if (strCPF == "00000000000") return false;
+
+    for (i = 1; i <= 9; i++)
+      Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
+
+    if (Resto == 10 || Resto == 11) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+    Soma = 0;
+    for (i = 1; i <= 10; i++)
+      Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+
+    if (Resto == 10 || Resto == 11) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11))) return false;
+    return true;
   }
 
   function handleInputChange(event) {
@@ -112,9 +147,7 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <div>
-                        <label
-                          class="block mb-2 text-sm font-medium text-gray-900 "
-                        >
+                        <label class="block mb-2 text-sm font-medium text-gray-900 ">
                           Nome Completo
                         </label>
                         <input
@@ -138,13 +171,16 @@ const Form = () => {
                           placeholder="000.000.000.00"
                           name="cpf"
                         />
+                        {cpfError ? (
+                          <p class="text-red-500 mt-1 text-xs italic">
+                            CPF Inválido
+                          </p>
+                        ) : null}
                       </div>
                     </div>
                     <div>
                       <div>
-                        <label
-                          class="block mb-2 text-sm font-medium text-gray-900 "
-                        >
+                        <label class="block mb-2 text-sm font-medium text-gray-900 ">
                           Data de Nascimento
                         </label>
                         <input
@@ -174,9 +210,7 @@ const Form = () => {
                     </div>
                   </div>
                   <div>
-                    <label
-                      class="block mb-2 text-sm font-medium text-gray-900 "
-                    >
+                    <label class="block mb-2 text-sm font-medium text-gray-900 ">
                       Nome da mãe
                     </label>
                     <input
@@ -208,9 +242,7 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <div>
-                        <label
-                          class="block mb-2 text-sm font-medium text-gray-900 "
-                        >
+                        <label class="block mb-2 text-sm font-medium text-gray-900 ">
                           CEP
                         </label>
                         <div className="flex items-center">
@@ -224,8 +256,25 @@ const Form = () => {
                             placeholder="CEP"
                             required=""
                           />
-                          <button onClick={CheckCEP} class=" border-transparent ml-2 text-sm rounded" type="button">
-                            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                          <button
+                            onClick={CheckCEP}
+                            class=" border-transparent ml-2 text-sm rounded"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="w-5 h-5"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                              ></path>
+                            </svg>
                           </button>
                         </div>
                       </div>
@@ -245,9 +294,7 @@ const Form = () => {
                     </div>
                     <div>
                       <div>
-                        <label
-                          class="block mb-2 text-sm font-medium text-gray-900 "
-                        >
+                        <label class="block mb-2 text-sm font-medium text-gray-900 ">
                           Endereço
                         </label>
                         <input
@@ -261,9 +308,7 @@ const Form = () => {
                       </div>
                       <div className="flex justify-between gap-5 mt-2">
                         <div className="w-1/4">
-                          <label
-                            class="block mb-2 text-sm font-medium text-gray-900 "
-                          >
+                          <label class="block mb-2 text-sm font-medium text-gray-900 ">
                             UF
                           </label>
                           <input
@@ -276,9 +321,7 @@ const Form = () => {
                           />
                         </div>
                         <div className="w-3/4">
-                          <label
-                            class="block mb-2 text-sm font-medium text-gray-900 "
-                          >
+                          <label class="block mb-2 text-sm font-medium text-gray-900 ">
                             Cidade
                           </label>
                           <input
@@ -295,9 +338,7 @@ const Form = () => {
                   </div>
                   <div className="flex justify-between gap-4">
                     <div className="w-32">
-                      <label
-                        class="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label class="block mb-2 text-sm font-medium text-gray-900 ">
                         Número
                       </label>
                       <input
@@ -310,9 +351,7 @@ const Form = () => {
                       />
                     </div>
                     <div className="w-64">
-                      <label
-                        class="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label class="block mb-2 text-sm font-medium text-gray-900 ">
                         Complemento
                       </label>
                       <input
@@ -325,6 +364,7 @@ const Form = () => {
                       />
                     </div>
                   </div>
+
                   <div className="flex justify-between">
                     <button
                       onClick={Back}
@@ -356,7 +396,6 @@ const Form = () => {
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
                         d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                       ></path>
                     </svg>
@@ -368,9 +407,7 @@ const Form = () => {
                 <div className="space-y-4 md:space-y-5" action="#">
                   <div className="flex space-x-5">
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Nome
                       </label>
                       {!isDisable ? (
@@ -390,9 +427,7 @@ const Form = () => {
                       )}
                     </div>
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         CPF
                       </label>
                       {!isDisable ? (
@@ -414,9 +449,7 @@ const Form = () => {
                   </div>
                   <div className="flex space-x-5">
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Data de Nascimento
                       </label>
                       {!isDisable ? (
@@ -436,9 +469,7 @@ const Form = () => {
                       )}
                     </div>
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Gênero
                       </label>
                       {!isDisable ? (
@@ -459,9 +490,7 @@ const Form = () => {
                     </div>
                   </div>
                   <div>
-                    <label
-                      className="block mb-2 text-sm font-medium text-gray-900 "
-                    >
+                    <label className="block mb-2 text-sm font-medium text-gray-900 ">
                       Nome da mãe
                     </label>
                     {!isDisable ? (
@@ -482,9 +511,7 @@ const Form = () => {
                   </div>
                   <div className="flex space-x-5">
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         CEP
                       </label>
                       {!isDisable ? (
@@ -504,9 +531,7 @@ const Form = () => {
                       )}
                     </div>
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Endereço
                       </label>
                       {!isDisable ? (
@@ -528,9 +553,7 @@ const Form = () => {
                   </div>
                   <div className="flex space-x-5">
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Cidade
                       </label>
                       {!isDisable ? (
@@ -550,9 +573,7 @@ const Form = () => {
                       )}
                     </div>
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Bairro
                       </label>
                       {!isDisable ? (
@@ -574,9 +595,7 @@ const Form = () => {
                   </div>
                   <div className="flex space-x-5">
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         UF
                       </label>
                       {!isDisable ? (
@@ -596,9 +615,7 @@ const Form = () => {
                       )}
                     </div>
                     <div>
-                      <label
-                        className="block mb-2 text-sm font-medium text-gray-900 "
-                      >
+                      <label className="block mb-2 text-sm font-medium text-gray-900 ">
                         Número
                       </label>
                       {!isDisable ? (
@@ -638,6 +655,12 @@ const Form = () => {
                       )}
                     </div>
                   </div>
+                  <button
+                    onClick={createUser}
+                    className="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  >
+                    Enviar
+                  </button>
                 </div>
               </div>
             ) : null}
