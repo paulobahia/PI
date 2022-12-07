@@ -47,7 +47,7 @@ const Form = () => {
       });
   };
 
-  function createUser() {
+  function createUsers() {
     const postData = {
       fullName: formValues.name,
       Birthday: formValues.birthday,
@@ -61,6 +61,7 @@ const Form = () => {
       number: formValues.number,
       addInfo: formValues.complement,
     };
+    console.log(postData);
     createUser(postData)
       .then((response) => {
         console.log("Usuário criado");
@@ -72,14 +73,10 @@ const Form = () => {
   }
 
   function Next() {
-    if (formValues.name == "") {
-      setNameError(true);
-    } else if (TestaCPF(strCPF) === false) {
-      console.log("CPF Ruim");
+    if (TestaCPF(strCPF) === false) {
       setCPFError(true);
-    } else if (formValues.birthday == "") {
-      setBirthdayError(true);
-    } else {
+    } 
+    else {
       setIsData(true);
       setIsLocal(true);
       setNameError(false);
@@ -146,37 +143,67 @@ const Form = () => {
                 <div class="space-y-4 md:space-y-5" action="#">
                   <div className="flex space-x-5">
                     <div>
-                      <div>
-                        <label class="block mb-2 text-sm font-medium text-gray-900 ">
-                          Nome Completo
-                        </label>
-                        <input
-                          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          onChange={handleInputChange}
-                          type="text"
-                          value={formValues.name}
-                          placeholder="Nome"
-                          name="name"
-                        />
-                      </div>
-                      <div>
-                        <label class="block mt-2 mb-2 text-sm font-medium text-gray-900 ">
-                          CPF
-                        </label>
-                        <input
-                          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          onChange={handleInputChange}
-                          type="text"
-                          value={formValues.cpf}
-                          placeholder="000.000.000.00"
-                          name="cpf"
-                        />
-                        {cpfError ? (
+                      {!nameError ? (
+                        <div>
+                          <label class="block mb-2 text-sm font-medium text-gray-900 ">
+                            Nome Completo
+                          </label>
+                          <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            onChange={handleInputChange}
+                            type="text"
+                            value={formValues.name}
+                            placeholder="Nome"
+                            name="name"
+                          />
+                        </div>
+                      ) : (
+                        <div>
+                          <label class="block mb-2 text-sm font-medium text-gray-900 ">
+                            Nome Completo
+                          </label>
+                          <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            onChange={handleInputChange}
+                            type="text"
+                            value={formValues.name}
+                            placeholder="Nome"
+                            name="name"
+                          />
+                        </div>
+                      )}
+                      {cpfError ? (
+                        <div>
+                          <label class="block mt-2 mb-2 text-sm font-medium text-gray-900 ">
+                            CPF
+                          </label>
+                          <input
+                            class="bg-gray-50 border border-red-500 text-red-500 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            onChange={handleInputChange}
+                            type="text"
+                            value={formValues.cpf}
+                            placeholder="000.000.000.00"
+                            name="cpf"
+                          />
                           <p class="text-red-500 mt-1 text-xs italic">
                             CPF Inválido
                           </p>
-                        ) : null}
-                      </div>
+                        </div>
+                      ) : (
+                        <div>
+                          <label class="block mt-2 mb-2 text-sm font-medium text-gray-900 ">
+                            CPF
+                          </label>
+                          <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            onChange={handleInputChange}
+                            type="text"
+                            value={formValues.cpf}
+                            placeholder="000.000.000.00"
+                            name="cpf"
+                          />
+                        </div>
+                      )}
                     </div>
                     <div>
                       <div>
@@ -419,7 +446,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="name"
                           onChange={handleInputChange}
                           value={formValues.name}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -439,7 +466,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="cpf"
                           onChange={handleInputChange}
                           value={formValues.cpf}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -461,7 +488,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="birthday"
                           onChange={handleInputChange}
                           value={formValues.birthday}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -481,7 +508,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="genre"
                           onChange={handleInputChange}
                           value={formValues.genre}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -502,7 +529,7 @@ const Form = () => {
                     ) : (
                       <input
                         type="text"
-                        name="number"
+                        name="mother"
                         onChange={handleInputChange}
                         value={formValues.mother}
                         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -543,7 +570,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="address"
                           onChange={handleInputChange}
                           value={formValues.address}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -565,7 +592,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="city"
                           onChange={handleInputChange}
                           value={formValues.city}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -585,7 +612,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="neighborhood"
                           onChange={handleInputChange}
                           value={formValues.neighborhood}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -607,7 +634,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="uf"
                           onChange={handleInputChange}
                           value={formValues.uf}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -647,7 +674,7 @@ const Form = () => {
                       ) : (
                         <input
                           type="text"
-                          name="number"
+                          name="complement"
                           onChange={handleInputChange}
                           value={formValues.complement}
                           className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -656,7 +683,7 @@ const Form = () => {
                     </div>
                   </div>
                   <button
-                    onClick={createUser}
+                    onClick={createUsers}
                     className="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   >
                     Enviar
