@@ -50,26 +50,22 @@ const Guide = () => {
               <p className="my-3 font-medium text-[20px]">
                 Na <span className="text-gradient ">Hello Psi,</span> você terá uma gama de especialistas qualificados.
               </p>
-              <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-3 grid-flow-col gap-y-2 gap-x-10">
+              <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-2 grid-flow-col gap-y-2 gap-x-10">
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Segurança e confiabilidade
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Especialistas licenciados
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Versatilidade de acessos
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
-                </li>
-                <li className="gap-2">
-                  <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Ambiente ideial para suas sessões
                 </li>
               </ul>
             </h2>
@@ -95,19 +91,15 @@ const Guide = () => {
               <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-2 grid-flow-col gap-y-2 gap-x-10">
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Hórarios flexiveis
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Salas customizaveis.
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
-                </li>
-                <li className="gap-2">
-                  <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                   Automação de agendamentos.
                 </li>
               </ul>
             </h2>
@@ -132,19 +124,15 @@ const Guide = () => {
               <ul className="text-[16px] md:place-content-start place-content-center font-medium mt-5 grid grid-rows-2 grid-flow-col gap-y-2 gap-x-10">
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Agora é só aproveitar a sua terapia.
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Chat em tempo real.
                 </li>
                 <li className="gap-2">
                   <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
-                </li>
-                <li className="gap-2">
-                  <img data-aos="zoom-in" src={bar} alt="bar" />
-                  Loren Ipsum
+                  Ambiente agradavel e seguro.
                 </li>
               </ul>
             </h2>

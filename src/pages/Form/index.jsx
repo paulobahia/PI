@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { createUser } from "../service";
+
 
 const Form = () => {
   const CEPRef = useRef();
@@ -24,6 +26,8 @@ const Form = () => {
     number: "",
     complement: "",
   });
+
+  let navigate = useNavigate();
 
   const CheckCEP = () => {
     const cep = CEPRef.current.value;
@@ -683,7 +687,7 @@ const Form = () => {
                     </div>
                   </div>
                   <button
-                    onClick={createUsers}
+                    onClick={() => { navigate('/') }}
                     className="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                   >
                     Enviar

@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "../../../style";
+import { useNavigate } from "react-router-dom";
+
 
 const Shortcut = () => {
+
+  let navigate = useNavigate();
+
   return (
     <section
       className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} md:flex-row flex-col bg-gradient-to-r from-purple-600 to-purple-300 rounded-[20px] box-shadow`}
@@ -16,6 +21,7 @@ const Shortcut = () => {
 
       <div className={`${styles.flexCenter} sm:mt-0 mt-10`}>
         <button
+          onClick={() => { navigate('/signin') }}
           type="button"
           className={`py-4 px-6 my-3 font-poppins font-medium text-[18px] text-black bg-white rounded-[10px] outline-none ${styles}`}
         >

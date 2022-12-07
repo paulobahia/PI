@@ -32,7 +32,7 @@ const Advantage = () => {
             </div>
             <div>
               <div className='mb-4 flex md:justify-start justify-center'>
-                <img src={ambiente} alt="Psicologo" className='mb-4' />
+                <img src={profile} alt="Psicologo" className='mb-4' />
               </div>
               <p className='font-poppins font-bold text-[35px] text-black'>Ambiente próprio</p>
               <p className={`font-poppins mt-3 font-semibold text-gray-500 text-[15px]`}>Com a Hello Psi, nós disponibilizamos <br /> um  espaço totalmente personalizado para você.</p>

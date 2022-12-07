@@ -6,7 +6,7 @@ import Specialist from "./Accordion/Specialist";
 import { searchFAQ } from "../../../../assets";
 
 const FAQ = () => {
-  const [showFAQ, setShowFAQ] = useState("Patient");
+  const [showFAQ, setShowFAQ] = useState("HelloPSI");
   return (
     <section className={`${styles.paddingY}  flex-col relative `}>
       <div
