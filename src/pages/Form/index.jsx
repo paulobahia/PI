@@ -4,6 +4,9 @@ import { createUser } from '../service'
 
 const Form = () => {
   const CEPRef = useRef();
+  const [nameError, setNameError] = useState(false);
+  const [cpfError, setCPFError] = useState(false);
+  const [birthdayError, setBirthdayError] = useState(false);
   const [isData, setIsData] = useState(false);
   const [isLocal, setIsLocal] = useState(false);
   const [isEnd, setIsEnd] = useState(false);
@@ -60,8 +63,19 @@ const Form = () => {
   }
 
   function Next() {
-    setIsData(true);
-    setIsLocal(true);
+    if (formValues.name == "") {
+      setNameError(true)
+    }
+    if (formValues.cpf == "") {
+      setCPFError(true)
+    }
+    if (formValues.birthday == "") {
+      setBirthdayError(true)
+    }
+    else {
+      setIsData(true);
+      setIsLocal(true);
+    }
   }
 
   function Back() {
@@ -99,7 +113,6 @@ const Form = () => {
                     <div>
                       <div>
                         <label
-                          for="email"
                           class="block mb-2 text-sm font-medium text-gray-900 "
                         >
                           Nome Completo
@@ -130,7 +143,6 @@ const Form = () => {
                     <div>
                       <div>
                         <label
-                          for="email"
                           class="block mb-2 text-sm font-medium text-gray-900 "
                         >
                           Data de Nascimento
@@ -163,7 +175,6 @@ const Form = () => {
                   </div>
                   <div>
                     <label
-                      for="confirm-password"
                       class="block mb-2 text-sm font-medium text-gray-900 "
                     >
                       Nome da mãe
@@ -198,22 +209,25 @@ const Form = () => {
                     <div>
                       <div>
                         <label
-                          for="email"
                           class="block mb-2 text-sm font-medium text-gray-900 "
                         >
                           CEP
                         </label>
-                        <input
-                          onFocus={CheckCEP}
-                          ref={CEPRef}
-                          value={formValues.cep}
-                          type="text"
-                          name="email"
-                          id="email"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                          placeholder="Seu nome"
-                          required=""
-                        />
+                        <div className="flex items-center">
+                          <input
+                            ref={CEPRef}
+                            value={formValues.cep}
+                            type="text"
+                            name="email"
+                            id="email"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="CEP"
+                            required=""
+                          />
+                          <button onClick={CheckCEP} class=" border-transparent ml-2 text-sm rounded" type="button">
+                            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                          </button>
+                        </div>
                       </div>
                       <div>
                         <label class="block mt-2 mb-2 text-sm font-medium text-gray-900 ">
@@ -232,7 +246,6 @@ const Form = () => {
                     <div>
                       <div>
                         <label
-                          for="email"
                           class="block mb-2 text-sm font-medium text-gray-900 "
                         >
                           Endereço
@@ -249,7 +262,6 @@ const Form = () => {
                       <div className="flex justify-between gap-5 mt-2">
                         <div className="w-1/4">
                           <label
-                            for="email"
                             class="block mb-2 text-sm font-medium text-gray-900 "
                           >
                             UF
@@ -265,7 +277,6 @@ const Form = () => {
                         </div>
                         <div className="w-3/4">
                           <label
-                            for="email"
                             class="block mb-2 text-sm font-medium text-gray-900 "
                           >
                             Cidade
@@ -285,7 +296,6 @@ const Form = () => {
                   <div className="flex justify-between gap-4">
                     <div className="w-32">
                       <label
-                        for="confirm-password"
                         class="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Número
@@ -301,7 +311,6 @@ const Form = () => {
                     </div>
                     <div className="w-64">
                       <label
-                        for="confirm-password"
                         class="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Complemento
@@ -360,7 +369,6 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Nome
@@ -383,7 +391,6 @@ const Form = () => {
                     </div>
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         CPF
@@ -408,7 +415,6 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Data de Nascimento
@@ -431,7 +437,6 @@ const Form = () => {
                     </div>
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Gênero
@@ -455,7 +460,6 @@ const Form = () => {
                   </div>
                   <div>
                     <label
-                      for="confirm-password"
                       className="block mb-2 text-sm font-medium text-gray-900 "
                     >
                       Nome da mãe
@@ -479,7 +483,6 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         CEP
@@ -502,7 +505,6 @@ const Form = () => {
                     </div>
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Endereço
@@ -527,7 +529,6 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Cidade
@@ -550,7 +551,6 @@ const Form = () => {
                     </div>
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Bairro
@@ -575,7 +575,6 @@ const Form = () => {
                   <div className="flex space-x-5">
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         UF
@@ -598,7 +597,6 @@ const Form = () => {
                     </div>
                     <div>
                       <label
-                        for="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 "
                       >
                         Número
